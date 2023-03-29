@@ -1,0 +1,19 @@
+﻿@model Prodects
+@{
+    ViewData["Title"] = "Deleteprodect";
+}
+
+
+
+<h1>Are you Sure wont delete @Model.ProdectName?</h1>
+
+
+
+<form method="post" asp-action="Delete">
+    @Html.HiddenFor(x=>x.ProdectId)
+
+    <input type="submit" value="yes" class="btn btn-danger" /> |
+    <a asp-action="AllProdect" class="btn btn-danger">Cancel</a>
+
+
+</form>

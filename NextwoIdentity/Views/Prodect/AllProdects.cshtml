@@ -1,0 +1,45 @@
+﻿
+@model IEnumerable<Prodects>
+
+@{
+    ViewData["Title"] = "AllProdects";
+}
+
+<h1>AllProdect</h1>
+
+<a asp-action="CreateProdect" asp-controller="Prodect" class="btn btn-primary btn-sm">Create new Prodect</a>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(c=>c.ProdectName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(c=>c.Description)
+        </th>
+        <th>   @Html.DisplayNameFor(c=>c.Category!.CategoreyName)</th>
+      
+        <th>
+
+           Operations
+        </th>
+        </tr>
+        @foreach(var Pro in Model)
+        {
+            <tr>
+            <td>@Pro.ProdectName </td>
+            <td>@Pro.Description </td>
+            <td>@Html.DisplayNameFor(c=>c.Category!.CategoreyName)</td>
+            <td>
+                <a asp-route-id="@Pro.ProdectId" asp-action="EditProdects" asp-controller="Home" class="btn btn-outline-danger brn-sm ">Edit</a>
+
+                <a asp-route-id="@Pro.ProdectId" asp-action="Details" asp-controller="Home" class="btn btn-outline-info brn-sm ">Details</a>
+
+                <a asp-route-id="@Pro.ProdectId" asp-action="Delete" asp-controller="Home" class="btn btn-outline-secondary brn-sm ">Delete</a>
+               
+
+            </td>
+            </tr>
+
+
+        }
+</table>

@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Category
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<table class="table table-bordered">
+    <tr>
+        <td><label asp-for="CategoreyId"></label>  </td>
+        <td>  @Model.CategoreyId </td>
+    </tr>
+    <tr>
+        <td><label asp-for="CategoreyName"></label>  </td>
+        <td>  @Model.CategoreyName </td>
+    </tr>
+
+
+</table>
+<a asp-action="AllCategory">Back To AllCa</a>

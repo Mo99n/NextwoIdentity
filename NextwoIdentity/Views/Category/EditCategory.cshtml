@@ -1,0 +1,34 @@
+﻿@model NextwoIdentity.Models.ViewModels.Category
+
+@{
+    ViewData["Title"] = "EditCategory";
+}
+<h1>EditCategory</h1>
+
+
+<hr />
+<form method="post" asp-action="EditCategory">
+    @Html.HiddenFor(x=>x.CategoreyId)
+    
+    <div class="row">
+        <div class="col-md-4">
+        
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="CategoreyName" class="control-label"></label>
+                    <input asp-for="CategoreyName" class="form-control" />
+                    <span asp-validation-for="CategoreyName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+          
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="AllCategory">Back to All Category</a>
+    </div>
+</form>
+

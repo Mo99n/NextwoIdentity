@@ -1,0 +1,40 @@
+﻿@model Category
+@using Microsoft.AspNetCore.Identity
+
+
+
+@{
+    ViewData["Title"] = "CreateCategory";
+}
+
+<h1>Create New Category</h1>
+
+<form method="post" asp-action="CreateCategory">
+
+
+    <table class="table table-bordered">
+      
+
+        <tr>
+            <td><label asp-for="CategoreyName"></label></td>
+            <td>
+                <input asp-for="CategoreyName" asp-items="ViewBag.AllCat" class=" form-control" />
+
+                <span asp-validation-for="CategoreyName" class="text-danger"></span>
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td colspan="2">
+                <input type="submit" class="btn btn-primary" value="Create" />
+
+            </td>
+
+        </tr>
+    </table>
+
+
+</form>

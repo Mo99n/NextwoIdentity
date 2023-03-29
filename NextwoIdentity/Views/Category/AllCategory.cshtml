@@ -1,0 +1,39 @@
+﻿@model IEnumerable<NextwoIdentity.Models.ViewModels.Category>
+
+@{
+    ViewData["Title"] = "AllCategory";
+}
+
+<h1>AllCategory</h1>
+
+<a asp-action="CreateCategory" asp-controller="Category" class="btn btn-primary btn-sm">Create new Category</a>
+<table class="table" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoreyName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoreyName)
+            </td>
+
+
+                <td>
+                    <a asp-route-id="@item.CategoreyId" asp-action="EditCategory" asp-controller="Category" class="btn btn-outline-danger brn-sm ">Edit</a>
+
+                    <a asp-route-id="@item.CategoreyId" asp-action="Details" asp-controller="Category" class="btn btn-outline-info brn-sm ">Details</a>
+
+                    <a asp-route-id="@item.CategoreyId" asp-action="Delete" asp-controller="Category" class="btn btn-outline-secondary brn-sm ">Delete</a>
+
+
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
